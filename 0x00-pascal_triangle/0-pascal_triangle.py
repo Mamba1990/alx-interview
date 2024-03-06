@@ -1,43 +1,43 @@
 #!/usr/bin/python3
 """
-Pascal Triangle
+0-pascal_triangle
 """
 
 
 def pascal_triangle(n):
-    """Dispalys a list of lists of integers representing the pascal's triangle of n
+    """Return a list of lists of integers representing the pascal's triangle of n
 
     Args:
-        n (int): rows' number
+        n (int): number of rows
     """
     if n <= 0:
         return []
-    res = []
+    result = []
 
-    for k in range(n):
+    for i in range(n):
         row = []
-        # colunms in row is k + 1
-        for l in range(k + 1):
+        # cols in row is i + 1
+        for j in range(i + 1):
             # cell is at [row, cell]
-            row.append(combination(k, l))
-        res.append(row)
+            row.append(combination(i, j))
+        result.append(row)
 
-    return res
+    return result
 
 
 def combination(n, r):
-    """Displays the combination of a n and r (nCr)
+    """Return the combination of a n and r (nCr)
 
     Args:
-        n (int): objects' of total number
-        r (int): chosen objects' number
+        n (int): total number of objects
+        r (int): number of chosen objects
     """
     denominator = factorial(n - r) * factorial(r)
     return int(factorial(n) / denominator)
 
 
 def factorial(n):
-    """Displays the factorial of a number
+    """Return the factorial of a number
 
     Args:
         n (int): number
