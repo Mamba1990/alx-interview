@@ -1,10 +1,15 @@
 #!/usr/bin/python3
+<<<<<<< HEAD
 """
 0-pascal_triangle
+=======
+"""Pascal's triangle.
+>>>>>>> 42181bc5f813e0ff28efa477d7ac58ed6fa0592c
 """
 
 
 def pascal_triangle(n):
+<<<<<<< HEAD
         """Return a list of lists of integers representing the pascal's triangle of n
 
             Args:
@@ -46,3 +51,20 @@ def pascal_triangle(n):
                                                                                                                                                                                         return 1
                                                                                                                                                                                         else:
                                                                                                                                                                                                     return n * factorial(n - 1)
+=======
+    """Displays a list of lists of integers representing
+    the Pascal's triangle of a given integer.
+    """
+    triangle = []
+    if type(n) is not int or n <= 0:
+        return triangle
+    for k in range(n):
+        line = []
+        for l in range(k + 1):
+            if l == 0 or l == k:
+                line.append(1)
+            elif k > 0 and l > 0:
+                line.append(triangle[k - 1][l - 1] + triangle[k - 1][l])
+        triangle.append(line)
+    return triangle
+>>>>>>> 42181bc5f813e0ff28efa477d7ac58ed6fa0592c
